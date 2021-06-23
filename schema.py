@@ -2,9 +2,9 @@ from pydantic import BaseModel
 
 class Pizza(BaseModel):
 
-    name: str = None
-    price: int = None
-    is_cheese_stuffed: bool = None
+    name: str
+    price: int
+    is_cheese_stuffed: bool
 
     class Config:
         orm_mode = True

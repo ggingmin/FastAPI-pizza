@@ -8,7 +8,7 @@ from schema import Pizza as SchemaPizza
 
 # app.add_middleware(DBSessionMiddleware, db_url=os.environ["DATABASE_URL"])
 
-@app.post("/pizza/", response_model=SchemaPizza)
+@app.post("/pizza/")
 async def create_pizza(pizza: SchemaPizza):
     pizza_id = await ModelPizza.create(**pizza.dict())
     return {"pizza_id": pizza_id}
